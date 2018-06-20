@@ -1,0 +1,96 @@
+html {
+    height: 100%;
+}
+body {
+    background-color: #f0f0e0;
+    min-height: 100%;
+}
+.wrapper{
+    position: relative;
+    height:100%;
+}
+.topmenu {
+    position: fixed;
+    background-color: chocolate;
+    height: 50px;
+    /*width: calc(100% - 2em);*/
+    width: 100%;
+    margin: auto;
+    padding: 5px;
+    vertical-align: middle;
+}
+.topBar {
+    /*background-color: brown;*/
+    position: fixed;
+    top: 0;
+    z-index: 99;
+    width: 100%;
+}
+.wd {
+    display: inline-block;
+    width: 7em;
+}
+.bk {
+    position: relative;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    padding: 1em;
+    /*margin-bottom: 2px;*/
+    margin: 1em;
+}
+.bk .x {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}
+.bk span {
+    display: inline-block;
+    width: 7em;
+}
+.nt {
+    display: inline-block;
+    width: 5em;
+}
+.nu {
+    /*margin-top: 1em;*/
+    padding: 0.5em;
+}
+.su {
+    position: relative;
+    left: 200px;
+    width: 7em;
+}
+.se {
+    display: inline;
+}
+.item {
+    padding: 0.2em;
+}
+.mg {
+    margin: 2em;
+}
+.tm {
+    margin: 0.5em 0;
+}
+.wid100 {
+    width: 100px !important;
+}
+.add {
+    position: relative;
+    display: inline;
+}
+.r2 {
+    margin-right: 0.5em;
+}
+h3 {
+    margin-top: 0;
+    margin-bottom: 0.5em;
+}
+.editIcon {
+    margin-left: 0.5em;
+}
+footer {
+    position: fixed;
+    bottom: 0;
+}

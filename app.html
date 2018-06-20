@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Time Tabling with Genetic Algorithm</title>
+    <link rel="stylesheet" type="text/css" href="app.css">
+    <link rel="stylesheet" href="lib/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="topBar">
+    <nav class="navbar" role="navigation" aria-label="dropdown navigation">
+            <div class="navbar-start">
+              <a class="navbar-item">
+                <img src="lib/gt-logo.png">
+              </a>
+              <a class="navbar-item" id="Classes">
+                  Classes
+              </a>
+              <a class="navbar-item" id="Rooms">
+                  Rooms
+              </a>
+              <a class="navbar-item" id="Subjects">
+                  Subjects
+              </a>
+              <a class="navbar-item" id="Teachers">
+                  Teachers
+              </a>
+            </div>
+
+            <div class="navbar-end">
+              <div class="navbar-item">
+                  <p class="control">
+                    <a class="button" id="Test">Test</a>
+                  </p>
+              </div>
+              <div class="navbar-item">
+                <p class="control">
+                  <a class="button" id="Restore">Restore</a>
+                </p>
+              </div>
+              <div class="navbar-item">
+                <p class="control">
+                  <a class="button" id="Save">Save</a>
+                </p>
+              </div>
+              <div class="navbar-item">
+                <p class="control">
+                  <a class="button" id="addNew">Add New</a>
+                </p>
+              </div>
+            </div>
+            
+          </nav>
+          </div>
+    <div style="height:55px;"></div>
+    <div id="app"></div>
+    <div class="modal" id="modal">
+        <div class="modal-background"></div>
+          <div class="modal-content">
+            <div class="box" id="mContent"></div>
+          </div>
+        <button class="modal-close is-large" aria-label="close"></button>
+      </div>
+    <footer></footer>
+  </div>
+</body>
+<script src="app.js"></script>
+</html>

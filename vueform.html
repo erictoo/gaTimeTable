@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+</head>
+<body>
+    <div id="app">
+        <form action="#">
+        <div v-for="c in classrooms">
+            <h3>{{c.name}}</h3>
+            <div v-for="w in weekdays"><span style="display: inline-block; width :100px; height:2em; background-color: brown; color:burlywood;">{{w.name}}</span>
+            <label v-for="j in 8">
+               {{j}} <input type="checkbox">
+            </label>
+            </div>
+            <hr>
+        </div>
+        </form>
+    </div>
+    <!--form action="#">
+        <p>
+            <label style="width:100px; height:60px;"><input type="checkbox" id="cb" checked="checked"></label>
+        </p>
+    </form-->
+    
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+<script>
+    var item = new Vue({
+        el: app,
+        data: {
+            classrooms: [
+                {name:"Computer Room"},
+                {name:"Music Room"}
+            ],
+            weekdays: [
+                {name:"Monday"},
+                {name:"Tuesday"},
+                {name:"Wednesday"},
+                {name:"Thursday"},
+                {name:"Friday"},
+            ]
+        }
+    });
+</script>
+</html>

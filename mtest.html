@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+</head>
+<body>
+        <div class="row">
+                <div class="col s12">
+                  <ul class="tabs">
+                    <li class="tab col s3"><a href="#test1">Test 1</a></li>
+                    <li class="tab col s3"><a class="active" href="#test2">Test 2</a></li>
+                    <li class="tab col s3 disabled"><a href="#test3">Disabled Tab</a></li>
+                    <li class="tab col s3"><a href="#test4">Test 4</a></li>
+                  </ul>
+                </div>
+                <div id="test1" class="col s12">Test 1</div>
+                <div id="test2" class="col s12">Test 2</div>
+                <div id="test3" class="col s12">Test 3</div>
+                <div id="test4" class="col s12">Test 4</div>
+              </div>
+
+    <form action="#">
+        <div style="margin: auto; border-width: 2px; border-style: solid; max-width: 300px; padding:10px;">
+        <p>
+          <label>
+            <input type="checkbox" />
+            <span>Red</span>
+          </label>
+        </p>
+        <p>
+          <label>
+            <input type="checkbox" checked="checked" />
+            <span>Yellow</span>
+          </label>
+        </p>
+        <p>
+          <label>
+            <input type="checkbox" class="filled-in" checked="checked" />
+            <span>Filled in</span>
+          </label>
+        </p>
+        <p>
+          <label>
+            <input id="indeterminate-checkbox" type="checkbox" />
+            <span>Indeterminate Style</span>
+          </label>
+        </p>
+        <p>
+          <label>
+            <input type="checkbox" checked="checked" disabled="disabled" />
+            <span>Green</span>
+          </label>
+        </p>
+        <p>
+          <label>
+            <input type="checkbox" disabled="disabled" />
+            <span>Brown</span>
+          </label>
+        </p>
+        </div>
+      </form>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+</html>

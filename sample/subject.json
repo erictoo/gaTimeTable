@@ -1,0 +1,7 @@
+{
+    "ChineseG45": {
+        "teaching": [true, true, false],
+        "category": "Chinese",
+        "location": "own"
+    }
+}

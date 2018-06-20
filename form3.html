@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .wd {
+            display: inline-block;
+            width: 7em;
+        }
+        .bk {
+            border-style: solid;
+            border-color: black;
+            border-width: 1px;
+            padding: 1em;
+            margin-bottom: 2px;
+        }
+        h3 {
+            margin-top: 0;
+            margin-bottom: 0.5em;
+        }
+    </style>
+</head>
+<body>
+    <form action="#">
+        <input type="button" value="Click Me" id="makeJSON">
+        <div id="app"></div>
+    </form>
+</body>
+<!--script src="jquery-3.3.1.min.js"></script-->
+
+<script>
+window.$ = window.jQuery = require('./jquery-3.3.1.min.js');
+
+const {ipcRenderer} = require('electron');
+  /*console.log(ipcRenderer.sendSync('synchronous-message', 'pingping')) // prints "pong"
+  
+  ipcRenderer.on('asynchronous-reply', (event, arg) => {
+    console.log(arg) // 印出 "pong"
+  })
+  ipcRenderer.send('asynchronous-message', 'ping')*/
+
+const rooms = ["Computer","STEM","Lab","Music","Playground","VA"];
+const weekDays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+
+var makeForm = function(ex) {
+    let html = new String();
+    for (let h = 0; h < rooms.length; h++) {
+        html += `<div class="bk"><h3>${rooms[h]}</h3>`
+        for (let i = 0; i < 5; i++) {
+            html += `<span class="wd">${weekDays[i]} :</span>`;
+            for (let j = 0; j < 9; j++) {
+                let checked = ex[rooms[h]][i][j] ? "checked" : "";
+                //checked = "checked";
+                html += `${j} <input type="checkbox" ${checked} id="${rooms[h]}-${i}-${j}" class="cb">`;
+            }
+            html += `<br>`;
+        }
+        html += `</div>`;
+    }
+    return html;
+};
+
+var exportJSON = function() {
+    let output = new Object();
+    for (let h = 0; h < rooms.length; h++) {
+        let m = new Array();
+        for (let i = 0; i < 5; i++) {
+            let n = new Array();
+            for (let j = 0; j < 9; j++) {
+                let temp = $(`#${rooms[h]}-${i}-${j}`).is(":checked");
+                //console.log(`${rooms[h]} - ${temp}`)
+                n.push(temp);
+            }
+            m.push(n);
+        }
+        output[rooms[h]] = m;
+    }
+    let str = JSON.stringify(output);
+    return str;
+};
+
+    var exdata = ipcRenderer.sendSync('synchronous-message', 'pingping');
+    console.log(exdata);
+    var html = makeForm(exdata);
+    $("#app").html(html);
+    $("#makeJSON").click(function() {
+        var jSon = exportJSON();
+        ipcRenderer.send('classroom', jSon)
+        //console.log(jSon)
+        //console.log(html);
+    });
+</script>
+</html>

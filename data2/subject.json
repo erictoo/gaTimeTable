@@ -1,0 +1,14 @@
+[
+    {   
+        "name": "ChineseG45",
+        "teaching": [true, true, false],
+        "category": "Chinese",
+        "location": "own"
+    },
+    {   
+        "name": "EnglishG45",
+        "teaching": [true, true, false],
+        "category": "Chinese",
+        "location": "own"
+    }
+]

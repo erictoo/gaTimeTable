@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Time Table Arrangement with Genetic Algorithm</title>
+    <link rel="stylesheet" type="text/css" href="app.css">
+</head>
+<body>
+    <div class="topmenu">
+        <input type="button" value="Save Changes" id="makeJSON">
+        <input type="text" id="textInput">
+        <input type="button" value="Add" id="addItem">
+        <span style="right: 0; position: float; float: right;">
+            <input type="button" value="Rooms" id="Rooms">
+            <input type="button" value="Subjects" id="Subjects">
+            <input type="button" value="Classes" id="Classes">
+            <input type="button" value="Teachers" id="Teachers">
+        </span>
+        
+    </div>
+    <div style="height:50px;"></div>
+    <div id="app"></div>
+</body>
+<script src="app.js"></script>
+<!--script src="jquery-3.3.1.min.js"></script-->
+
+<!--script>
+window.$ = window.jQuery = require('./jquery-3.3.1.min.js');
+const {ipcRenderer} = require('electron');
+
+const rooms = ["Computer","STEM","Lab","Music","Playground","VA"];
+const weekDays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+const grades = ["G4", "G5", "G6"];
+
+var makeSubjectForm = function(ex) {
+    let html = new String();
+    for (let h in ex) {
+        //console.log(`${h} - ${ex[h]}`);
+        html += `<div class="bk"><h3>${h}</h3>`;
+        for (let i in ex[h].teaching) {
+            let checked = ex[h].teaching[i] ? " checked" : "";
+            html += `${grades[i]}<input type="checkbox"${checked}> `;
+        }
+        html += `<br><span>Category: </span><input type="text" value="${ex[h].category}">`;
+        html += `<br><span>Location: </span><input type="text" value="${ex[h].location}">`;
+    }
+    html += "</div>";
+    return html;
+};
+
+var exportJSON = function() {
+    let output = new Object();
+    for (let h = 0; h < rooms.length; h++) {
+        let m = new Array();
+        for (let i = 0; i < 5; i++) {
+            let n = new Array();
+            for (let j = 0; j < 9; j++) {
+                let temp = $(`#${rooms[h]}-${i}-${j}`).is(":checked");
+                //console.log(`${rooms[h]} - ${temp}`)
+                n.push(temp);
+            }
+            m.push(n);
+        }
+        output[rooms[h]] = m;
+    }
+    let str = JSON.stringify(output);
+    return str;
+};
+
+    var exdata = ipcRenderer.sendSync('subjectLoaded', 'pingping');
+    console.log(exdata);
+    var html = makeSubjectForm(exdata);
+    $("#app").html(html);
+    $("#makeJSON").click(function() {
+        var jSon = exportJSON();
+        ipcRenderer.send('classroom', jSon)
+        //console.log(jSon)
+        //console.log(html);
+    });
+</script-->
+</html>

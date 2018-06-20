@@ -1,0 +1,30 @@
+{
+    "Bonnie": {
+        "teaching": {
+            "chinese" : {
+                "4a": {
+                    "single": 1,
+                    "double": 2
+                },
+                "4b": {
+                    "single": 1
+                }
+            },
+            "Putonghua": {}
+        }
+    },
+    "Stella": {
+        "teaching": {
+            "chinese" : {
+                "4a": {
+                    "single": 1,
+                    "double": 2
+                },
+                "4b": {
+                    "single": 1
+                }
+            },
+            "Putonghua": {}
+        }
+    }
+}

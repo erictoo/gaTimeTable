@@ -1,0 +1,38 @@
+[
+    {
+        "name": "Bonnie",
+        "class": "4A",
+        "teaching": {
+            "Chinese" : {
+                "4A": {
+                    "single": 1,
+                    "double": 2
+                },
+                "4B": {
+                    "single": 1
+                }
+            },
+            "Putonghua": {}
+        }
+    },
+    {
+        "name": "Stella",
+        "class": "",
+        "teaching": {
+            "Chinese" : {
+                "4A": {
+                    "single": 1,
+                    "double": 1
+                },
+                "4B": {
+                    "single": 2
+                }
+            },
+            "Putonghua": {
+                "4B": {
+                    "single": 3
+                }
+            }
+        }
+    }
+]
